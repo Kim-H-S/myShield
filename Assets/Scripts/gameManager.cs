@@ -10,6 +10,8 @@ public class gameManager : MonoBehaviour
     public GameObject endPanel;
     public Text timeTxt;
     public Text thisScoreTxt;
+    public Text maxScoreTxt;
+    
 
     float alive = 0f;
     bool isRunning = true;
@@ -53,6 +55,18 @@ public class gameManager : MonoBehaviour
         endPanel.SetActive(true);
         
         thisScoreTxt.text = alive.ToString("N2");
+
+        if(PlayerPrefs.HasKey("bestscore") == false)
+        {
+            PlayerPrefs.SetFloat("bestscore", alive);
+        }
+        else if(alive > PlayerPrefs.GetFloat("bestscore"))
+        {
+            PlayerPrefs.SetFloat("bestscore", alive);
+        }
+
+        float maxScore = PlayerPrefs.GetFloat("bestscore");
+        maxScoreTxt.text = maxScore.ToString("N2");
     }
 
     public void retry()
