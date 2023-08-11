@@ -6,12 +6,20 @@ using UnityEngine.UI;
 public class gameManager : MonoBehaviour
 {
     public GameObject square;
+    public GameObject endPanel;
     public Text timeTxt;
 
     float alive = 0f;
 
-// Start is called before the first frame update
-void Start()
+    public static gameManager I;
+
+    void Awake()
+    {
+        I = this;
+    }
+
+    // Start is called before the first frame update
+    void Start()
     {
         InvokeRepeating("makeSquare", 0f, 0.5f);
     }
