@@ -20,6 +20,6 @@ public class gameManager : MonoBehaviour
 
     void makeSquare()
     {
-        Debug.Log("반복한다!");
+        Instantiate(square);
     }
 }
