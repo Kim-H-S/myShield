@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class gameManager : MonoBehaviour
 {
@@ -23,6 +24,8 @@ public class gameManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        Time.timeScale = 1f;
+
         InvokeRepeating("makeSquare", 0f, 0.5f);
     }
 
@@ -50,5 +53,10 @@ public class gameManager : MonoBehaviour
         endPanel.SetActive(true);
         
         thisScoreTxt.text = alive.ToString("N2");
+    }
+
+    public void retry()
+    {
+        SceneManager.LoadScene("MainScene");
     }
 }
