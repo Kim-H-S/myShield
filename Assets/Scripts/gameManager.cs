@@ -35,4 +35,10 @@ public class gameManager : MonoBehaviour
     {
         Instantiate(square);
     }
+
+    public void gameOver()
+    {
+        Time.timeScale = 0;
+        endPanel.SetActive(true);
+    }
 }
