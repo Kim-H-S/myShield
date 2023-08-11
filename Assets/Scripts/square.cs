@@ -9,8 +9,10 @@ public class square : MonoBehaviour
     {
         float x = Random.Range(-3f, 3f);
         float y = Random.Range(3f, 5f);
-
         transform.position = new Vector3(x, y, 0);
+
+        float size = Random.Range(0.5f, 1.5f);
+        transform.localScale = new Vector3(size, size, 0);
     }
 
     // Update is called once per frame
