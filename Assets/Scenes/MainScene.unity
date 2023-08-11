@@ -1902,3 +1902,4 @@ MonoBehaviour:
   square: {fileID: 6826079103811734954, guid: 75387446302f7484bb701e6901c01560, type: 3}
   endPanel: {fileID: 222465015}
   timeTxt: {fileID: 458487794}
+  thisScoreTxt: {fileID: 1123774742}

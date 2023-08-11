@@ -8,8 +8,10 @@ public class gameManager : MonoBehaviour
     public GameObject square;
     public GameObject endPanel;
     public Text timeTxt;
+    public Text thisScoreTxt;
 
     float alive = 0f;
+    bool isRunning = true;
 
     public static gameManager I;
 
@@ -27,8 +29,12 @@ public class gameManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        alive += Time.deltaTime;
-        timeTxt.text = alive.ToString("N2");
+        if(isRunning)
+        {
+            alive += Time.deltaTime;
+            timeTxt.text = alive.ToString("N2");
+        }
+
     }
 
     void makeSquare()
@@ -38,7 +44,11 @@ public class gameManager : MonoBehaviour
 
     public void gameOver()
     {
+        isRunning = false;
+
         Time.timeScale = 0;
         endPanel.SetActive(true);
+        
+        thisScoreTxt.text = alive.ToString("N2");
     }
 }
