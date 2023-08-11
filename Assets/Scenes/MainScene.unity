@@ -1916,3 +1916,4 @@ MonoBehaviour:
   timeTxt: {fileID: 458487794}
   thisScoreTxt: {fileID: 1123774742}
   maxScoreTxt: {fileID: 1303746491}
+  anim: {fileID: 1382910737}

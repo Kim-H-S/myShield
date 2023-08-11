@@ -11,7 +11,7 @@ public class gameManager : MonoBehaviour
     public Text timeTxt;
     public Text thisScoreTxt;
     public Text maxScoreTxt;
-    
+    public Animator anim;
 
     float alive = 0f;
     bool isRunning = true;
@@ -51,7 +51,10 @@ public class gameManager : MonoBehaviour
     {
         isRunning = false;
 
-        Time.timeScale = 0;
+        anim.SetBool("isDie", true);
+
+        Invoke("timeStop", 0.5f);
+
         endPanel.SetActive(true);
         
         thisScoreTxt.text = alive.ToString("N2");
@@ -72,5 +75,10 @@ public class gameManager : MonoBehaviour
     public void retry()
     {
         SceneManager.LoadScene("MainScene");
+    }
+
+    void timeStop()
+    {
+        Time.timeScale = 0;
     }
 }
